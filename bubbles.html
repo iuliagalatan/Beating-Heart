@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<html lang="en">
+<head>
+    <title>My heart beating for you </title>
+    <style>
+        .wrapper{
+            position:relative;
+            margin-top:50px;
+        }
+        
+        .text{
+            font-family:Lobster;
+            font-size:50px;
+            position:relative;
+            text-align:center;
+            padding-bottom:30px;
+            margin-bottom:50px;
+        }
+       .animated{
+           
+            animation-name: growBigger;
+            animation-duration: 3s;
+            animation-iteration-count: 4;
+        }
+        
+        .heart
+        {
+           
+           position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color:rgb(220,20,60);
+            height: 100px;
+            width: 100px;
+            transform: rotate(-45deg);
+          
+                   
+            
+        }
+        
+         .heart:after {
+            background-color: rgb(220,20,60);
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 0px;
+            left: 50px;
+          }
+          .heart:before {
+            background-color:rgb(220,20,60);
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: -50px;
+            left: 0px;
+          }
+        
+        @keyframes growBigger
+        {
+            0%{
+                transform: scale(1) rotate(-45deg);
+            }
+            50%{
+                 transform: scale(0.5) rotate(-45deg);
+            }
+            100% {
+                transform: scale(1) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text" id="text">I really really love you!</div>
+    <div class="wrapper" id="wrapper">
+    <div class="heart" id="heart" onclick="clickedfunction()"> </div></div>
+    
+</body>
+</html>
+
+
+<script>
+    function clickedfunction() {
+        //code
+    
+        var circle= document.getElementById('heart');
+        
+        circle.style.cursor = 'pointer';
+        circle.className = 'animated heart';
+    
+        }
+    
+</script>
